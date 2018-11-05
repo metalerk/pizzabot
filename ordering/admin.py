@@ -14,7 +14,7 @@ class PizzaAdmin(admin.ModelAdmin):
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-	list_display = ('id', 'name', 'address')
+	list_display = ('id', 'first_name', 'last_name', 'address')
 
 
 @admin.register(Order)

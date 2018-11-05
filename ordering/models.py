@@ -27,16 +27,21 @@ class Customer(models.Model):
 		default=uuid4,
 		editable=False
 	)
-	name = models.CharField(max_length=150, blank=False, null=False)
+	first_name = models.CharField(max_length=150, blank=False, null=False)
+	last_name = models.CharField(max_length=150, blank=False, null=False)
 	address = models.TextField()
 
 	def __str__(self):
-		return self.name
+		return '{} {}'.format(self.first_name, self.last_name)
+
+	@property
+	def get_fullname(self):
+		return '{} {}'.format(self.first_name, self.last_name)
 
 	class Meta:
 		db_table = 'customer'
 		verbose_name_plural = 'Customers'
-		ordering = ['-name']
+		ordering = ['-last_name']
 
 
 class Order(models.Model):

@@ -10,29 +10,27 @@ from ordering.models import (
 class PizzaSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Pizza
-		fields = (
-			'id',
-			'name',
-		)
+		fields = '__all__'
 
 
 class CustomerSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Customer
-		fields = (
-			'id',
-			'address',
-		)
+		fields = '__all__'
 
 
 class OrderSerializer(serializers.ModelSerializer):
+	pizza = serializers.SerializerMethodField()
+	customer = serializers.SerializerMethodField()
+
+
+	def get_pizza(self, obj):
+		return obj.pizza.id
+
+	def get_customer(self, obj):
+		return obj.customer.get_fullname
+
+
 	class Meta:
 		model = Order
-		fields = (
-			'id',
-			'pizza__id',
-			'size',
-			'customer_address',
-			'timestamp',
-			'updated',
-		)
+		fields = '__all__'
