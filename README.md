@@ -43,26 +43,28 @@ $ python manage.py runserver
 ## Create Order
 
 __Endpoint__: `/order/`
+<br>
 __Method__: POST
 
 __Params__
 
 Body:
 
-- `pizza`: Pizza id. <str>
-- `customer`: Customer id. <str>
+- `pizza`: Pizza id. 
+- `customer`: Customer id. 
 - `size`: Pizza size. (30 >= size <= 50) <int>
-- `customer_address`: Customer address in plain text. <str>
+- `customer_address`: Customer address in plain text. 
 
 
 ## Get Order
 
 __Endpoint__: /order/`order_id`/
+<br>
 __Method__: GET
 
 __Params__
 
-- `order_id`: Order id. <str>
+- `order_id`: Order id. 
 
 
 ## Get all Orders
@@ -71,6 +73,7 @@ __Endpoints__:
 - /order/
 - /order/`page`/
 - /order/`page`/`items`/
+<br>
 
 __Method__: GET
 
@@ -83,38 +86,41 @@ __Params__
 ## Update Order
 
 __Endpoint__: /order/`oder_id`/
+<br>
 __Method__: PUT
 
 __Params__
 
-- `order_id`: Order id. <str>
+- `order_id`: Order id. 
 
 Body:
 
-- `pizza`: Pizza id. <str>
-- `customer`: Customer id. <str>
+- `pizza`: Pizza id. 
+- `customer`: Customer id. 
 - `size`: Pizza size. (30 >= size <= 50) <int>
-- `customer_address`: Customer address in plain text. <str>
+- `customer_address`: Customer address in plain text. 
 
 
 ## Remove Order
 
 __Endpoint__: /order/`order_id`/
+<br>
 __Method__: DELETE
 
 __Params__
 
-- `order_id`: Order id. <str>
+- `order_id`: Order id. 
 
 
 ## Get Customer Orders
 
 __Endpoint__: /order/customer/`customer_id`/
+<br>
 __Method__: GET
 
 __Params__
 
-- `customer_id`: Customer id. <str>
+- `customer_id`: Customer id. 
 
 
 ### Testing
