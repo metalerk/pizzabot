@@ -9,11 +9,8 @@ from ordering.models import (
 	Customer,
 	Order,
 )
-from ordering.serializers import (
-	PizzaSerializer,
-	CustomerSerializer,
-	OrderSerializer,
-)
+from ordering.serializers import OrderSerializer
+
 from utils import get_or_none
 
 
