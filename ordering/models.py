@@ -50,6 +50,8 @@ class Order(models.Model):
 		default=uuid4,
 		editable=False
 	)
+	# This probably should be a ManyToMany relationship instead ForeignKey
+	# Could be an enhancement
 	pizza = models.ForeignKey(
 		Pizza,
 		on_delete=models.CASCADE,
